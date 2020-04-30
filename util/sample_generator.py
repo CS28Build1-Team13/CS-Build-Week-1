@@ -117,7 +117,7 @@ class World:
                 if room is not None and room.n_to is not None:
                     str += "  |  "
                 else:
-                    str += "     "
+                    str += "  |  "
             str += "#\n"
             # PRINT ROOM ROW
             str += "#"
@@ -125,7 +125,7 @@ class World:
                 if room is not None and room.w_to is not None:
                     str += "-"
                 else:
-                    str += " "
+                    str += "-"
                 if room is not None:
                     str += f"{room.id}".zfill(3)
                 else:
@@ -133,7 +133,7 @@ class World:
                 if room is not None and room.e_to is not None:
                     str += "-"
                 else:
-                    str += " "
+                    str += "-"
             str += "#\n"
             # PRINT SOUTH CONNECTION ROW
             str += "#"
@@ -141,7 +141,7 @@ class World:
                 if room is not None and room.s_to is not None:
                     str += "  |  "
                 else:
-                    str += "     "
+                    str += "  |  "
             str += "#\n"
 
         # Add bottom border
@@ -152,9 +152,9 @@ class World:
 
 
 w = World()
-num_rooms = 44
-width = 8
-height = 7
+num_rooms = 100
+width = 10
+height = 10
 w.generate_rooms(width, height, num_rooms)
 w.print_rooms()
 
