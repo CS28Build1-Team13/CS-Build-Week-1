@@ -8,6 +8,7 @@ import uuid
 
 class Room(models.Model):
     title = models.IntegerField(default=0)
+    description = models.CharField(max_length=500, default="An empty room...")
     n_to = models.IntegerField(default=-1)
     s_to = models.IntegerField(default=-1)
     e_to = models.IntegerField(default=-1)
@@ -42,14 +43,13 @@ class Room(models.Model):
         output = f'\n'
         output += f'-- START ROOM PRINT --\n'
         output += f'Title: {self.title}\n'
-        output += f'Desc: {self.description}\n'
         output += f'n_to: {self.n_to}\n'
         output += f's_to: {self.s_to}\n'
         output += f'e_to: {self.e_to}\n'
         output += f'w_to: {self.w_to}\n'
         output += f'-- END ROOM PRINT --\n'
         output += f'\n'
-
+        return output
 
 class Player(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

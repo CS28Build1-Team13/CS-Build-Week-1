@@ -1,6 +1,7 @@
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'adv_project.settings')
 from django.contrib.auth.models import User
 from adventure.models import Player, Room
-
 
 Room.objects.all().delete()
 
